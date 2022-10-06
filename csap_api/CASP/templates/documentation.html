@@ -1,0 +1,173 @@
+<!--
+
+            p {
+                position: absolute;
+                left: 4%;
+                top: 4%;
+                font-family: 'Open Sans';
+                font-size: 18px;
+                color: #6F62D7;
+            }
+        <p class="apikey">
+             <b style="color:#000000">API key : </b>{{ apikey }}
+        </p>
+-->
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>API - Documentation</title>
+    <meta name="description" content="">
+    <meta name="author" content="ticlekiwi">
+
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/css/highlight.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css" media="all">
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<div class="left-menu">
+    <div class="content-logo">
+        <div class="logo">
+            <span>API Documentation</span>
+        </div>
+        <button class="burger-menu-icon" id="button-menu-mobile">
+            <svg width="34" height="34" viewBox="0 0 100 100"><path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"></path><path class="line line2" d="M 20,50 H 80"></path><path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"></path></svg>
+        </button>
+    </div>
+    <div class="mobile-menu-closer"></div>
+    <div class="content-menu">
+        <div class="content-infos">
+            <div class="info"><b>Version:</b> 1.0.5</div>
+            <div class="info"><b>Last Updated:</b> 15th Sep, 2021</div>
+        </div>
+        <ul>
+            <li class="scroll-to-link active" data-target="content-get-started">
+                <a>GET STARTED</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-get-characters">
+                <a>ENDPOINTS</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="content-page">
+    <div class="content-code"></div>
+    <div class="content">
+        <div class="overflow-hidden content-section" id="content-get-started">
+            <h1>Get started</h1>
+            <pre>API Endpoint : <a href="http://ladecruze.practical-devsecops.training:5000/">http://ladecruze.practical-devsecops.training:5000/</a></p></pre>
+        </div>
+        <div class="overflow-hidden content-section" id="content-get-characters">
+            <h2>Endpoints</h2>
+            <p>
+               Get all users information :<br>
+               <code class="higlighted break-word">/v1/user/all</code>
+           </p>
+            <pre><code class="bash">
+
+curl \
+-X GET http://ladecruze.practical-devsecops.training:5000/v1/user/all \
+-H 'Authorization:your_api_key'
+                </code></pre>
+
+            <div class="box">GET</div>
+            <br>
+            <table class="central-overflow-x">
+                <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Authorization</td>
+                    <td>header</td>
+                    <td>Your API key</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <p>
+           Login to the application to view the API Documentation :<br>
+           <code class="higlighted break-word">/v1/user/(user_id)</code>
+       </p>
+        <pre><code class="bash">
+
+curl \
+-X GET http://ladecruze.practical-devsecops.training:5000/v1/user/(user_id) \
+-H 'Authorization:your_api_key'
+                           </code></pre>
+                           <div class="box">GET</div>
+                       <br>
+                       <table class="central-overflow-x">
+                           <thead>
+                           <tr>
+                               <th>Field</th>
+                               <th>Type</th>
+                               <th>Description</th>
+                           </tr>
+                           </thead>
+                           <tbody>
+                           <tr>
+                               <td>Authorization</td>
+                               <td>header</td>
+                               <td>Your API key.</td>
+                           </tr>
+                           <tr>
+                            <td>user_id</td>
+                            <td>URI</td>
+                            <td>User Id</td>
+                        </tr>
+                           </tbody>
+                       </table>
+                       <br>
+                       <br>
+                       <p>
+                          Login to the application to view the API Documentation :<br>
+                          <code class="higlighted break-word">/v1/user/(user_id)</code>
+                      </p>
+                       <pre><code class="bash">
+               
+curl \
+-X GET http://ladecruze.practical-devsecops.training:5000/v1/user/(user_id) \
+-H 'Authorization:your_api_key'
+                                          </code></pre>
+                                          <div class="box">GET</div>
+                                      <br>
+                                      <table class="central-overflow-x">
+                                          <thead>
+                                          <tr>
+                                              <th>Field</th>
+                                              <th>Type</th>
+                                              <th>Description</th>
+                                          </tr>
+                                          </thead>
+                                          <tbody>
+                                          <tr>
+                                              <td>Authorization</td>
+                                              <td>header</td>
+                                              <td>Your API key.</td>
+                                          </tr>
+                                          <tr>
+                                           <td>user_id</td>
+                                           <td>URI</td>
+                                           <td>User Id</td>
+                                       </tr>
+                                          </tbody>
+                                      </table>
+                   </div>
+    </div>
+</div>
+<script src="/static/js/script.js"></script>
+</body>
+</html>
