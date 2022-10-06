@@ -1,0 +1,17 @@
+version: "2.1"
+
+services:
+  app:
+    build: .
+    container_name: app 
+    ports:
+      - 5000:5000
+  zap:
+    image: owasp/zap2docker-stable 
+    container_name: zap 
+    tty: true
+    command: /bin/bash
+    volumes:
+      - ./:/zap/wrk
+    links:
+      - app 

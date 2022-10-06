@@ -1,0 +1,17 @@
+{
+	"site" : "localhost:5000",
+	"issues" : [
+		{ 
+			"id" : "100000",
+			"name" : "Server error response",
+			"state" : "inprogress",
+			"link": "https://www.example.com/bugtracker/issue=1234"
+		},
+		{ 
+			"id" : "100001",
+			"name" : "Unexpected content type",
+			"state" : "inprogress",
+			"link": "https://www.example.com/bugtracker/issue=1235"
+		}
+	]
+}

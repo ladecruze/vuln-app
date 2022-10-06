@@ -1,0 +1,184 @@
+{
+  "definitions": {
+    "Task": {
+      "properties": {
+        "date": {
+          "format": "date", 
+          "type": "string"
+        }, 
+        "id": {
+          "format": "int64", 
+          "type": "integer"
+        }, 
+        "todo": {
+          "type": "string"
+        }, 
+        "user": {
+          "type": "string"
+        }
+      }, 
+      "type": "object"
+    }
+  }, 
+  "info": {
+    "description": "powered by Flasgger", 
+    "termsOfService": "/tos", 
+    "title": "A swagger API", 
+    "version": "0.0.1"
+  }, 
+  "paths": {
+    "/api/v1/resources/todos": {
+      "get": {
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "description": "list of tasks", 
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/Task"
+              }, 
+              "type": "array"
+            }
+          }, 
+          "400": {
+            "description": "Invalid ID supplied"
+          }, 
+          "404": {
+            "description": "todo item not found"
+          }
+        }, 
+        "summary": "Returns a list of todo item"
+      }, 
+      "post": {
+        "consumes": [
+          "application/json"
+        ], 
+        "parameters": [
+          {
+            "description": "Task object that needs to be added to the store", 
+            "in": "body", 
+            "name": "body", 
+            "required": true, 
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "201": {
+            "description": "Task added"
+          }, 
+          "405": {
+            "description": "Invalid input"
+          }
+        }, 
+        "summary": "Add a new task to the store"
+      }
+    }, 
+    "/api/v1/resources/todos/{id}": {
+      "delete": {
+        "parameters": [
+          {
+            "description": "Task id to delete", 
+            "format": "int64", 
+            "in": "path", 
+            "name": "id", 
+            "required": true, 
+            "type": "integer"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "description": "Task deleted"
+          }, 
+          "400": {
+            "description": "Invalid ID supplied"
+          }, 
+          "404": {
+            "description": "Task not found"
+          }
+        }, 
+        "summary": "summary: \"Deletes a task\""
+      }, 
+      "get": {
+        "parameters": [
+          {
+            "default": "all", 
+            "description": "ID of todo item to return", 
+            "format": "int64", 
+            "in": "path", 
+            "name": "id", 
+            "required": true, 
+            "type": "integer"
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "200": {
+            "description": "successful operation", 
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          }, 
+          "400": {
+            "description": "Invalid ID supplied"
+          }, 
+          "404": {
+            "description": "todo item not found"
+          }
+        }, 
+        "summary": "Returns a todo item"
+      }, 
+      "put": {
+        "consumes": [
+          "application/json"
+        ], 
+        "parameters": [
+          {
+            "description": "ID of todo item to return", 
+            "format": "int64", 
+            "in": "path", 
+            "name": "id", 
+            "required": true, 
+            "type": "integer"
+          }, 
+          {
+            "description": "Task object that needs to be added to the store", 
+            "in": "body", 
+            "name": "body", 
+            "required": true, 
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          }
+        ], 
+        "produces": [
+          "application/json"
+        ], 
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          }, 
+          "404": {
+            "description": "Task not found"
+          }, 
+          "405": {
+            "description": "Validation exception"
+          }
+        }, 
+        "summary": "Update an existing todo item"
+      }
+    }
+  }, 
+  "swagger": "2.0"
+}
